@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To Do List </title>
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="top">
+  <h1>Jasmin's ToDo List </h1>
+  <h4>How To Do Use To Do List
+  </h4>
+
+  <ul class="todolist"><li>To add tasks use the form below and button </li>
+    <li>To mark task as complete ,click once on trash bin</li>
+    <li>To erase task, double clikc on trash bin </li>
+
+    </ul>
+  
+  <form id="listInput" action="/taskList" method="post">
+    <input type="text" name="task" placeholder="What is your errand or chore?" id="words">
+    <button id="addOnList" type="sumbit">ADD (+)</button>
+    </form>
+
+</section>
+
+<section class="viewList">
+  <ul id="addul">
+
+  <% for(var i=0; i<tasksArray.length; i++) {%>
+    <li class="taskList">
+      <span><%= tasksArray[i].task %></span>
+      <span><%= tasksArray[i].completed %></span>
+       <span><i class="fa fa-trash aria-hidden="true"></i></span>
+      
+    </li>
+  <% } %>
+  </ul>
+</section>
+
+  <script type="text/javascript" src="main.js"></script>
+
+</body>
+</html>
